@@ -359,6 +359,8 @@ For today, the main take-aways are:
 If you got all of that, then you can start to pickup more skills as you use
 things more.
 
+> additional reading i found helpful on stdout vs pipes
+
 # MAN pages
 
 If you ever want to learn more about a command, just type:
