@@ -359,6 +359,9 @@ For today, the main take-aways are:
 If you got all of that, then you can start to pickup more skills as you use
 things more.
 
+>> additional [blog post](1) I found helpful explaining stdout and pipes
+1: http://www.linfo.org/standard_output.html#:~:text=Standard%20output%2C%20sometimes%20abbreviated%20stdout,other%20Unix%2Dlike%20operating%20systems.
+
 # MAN pages
 
 If you ever want to learn more about a command, just type:
