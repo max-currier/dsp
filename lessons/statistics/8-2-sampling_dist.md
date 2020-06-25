@@ -80,13 +80,14 @@ And finally we can calculate the Standard Error (SE).
 stderr = RMSE(n10_means, np.mean(n10_means))
 ```
 
-Lastly, let's repeat process for other sample sizes to examine the relationship between n and SE.
+Lastly, let's repeat process for other sample sizes to examine the relationship between n and SE, and CI.
 
 ```python
 import matplotlib.pyplot as plt
 
 
 stderrs = []
+cis = []
 n_range = range(5, 100, 5)
 
 for n in n_range:
@@ -94,15 +95,20 @@ for n in n_range:
     
     cdf = thinkstats2.Cdf(means)
     
-    stderr = RMSE(means, np.mean(means))
+    ci = cdf.Percentile(5), cdf.Percentile(95)
+    cis.append(ci)
 
+    stderr = RMSE(means, np.mean(means))
     stderrs.append(stderr)
 
 
-plt.plot(n_range, stderrs)
+plt.plot(n_range, stderrs, label = "Standard Error")
+plt.plot(n_range, cis, label = "90% Confidence Interval")
 plt.xlabel('Sample Size')
-plt.ylabel('Standard Error');
+plt.ylabel('Standard Error')
+plt.legend()
+;
 ```
 
-We can see from this visualization that SE decreases as sample size increases, slowly approaching zero. 
+We can see from this visualization that SE decreases as sample size increases, slowly approaching zero. CI also narrows as n grows in size.
 
